@@ -1,1 +1,21 @@
-<p>listar-alquiler works!</p>
+<table class="table">
+
+      <thead>
+        <tr>
+          <th scope="col">Tiempo de alquiler</th>
+          <th scope="col">Fecha de Alquiler</th>
+          <th scope="col">Fecha de Devolucion</th>
+          <th scope="col">Fecha de Devolucion Real</th>
+          <th scope="col">Pago</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alquiler of listaAlquiler | async" id="listaAlquiler">
+          <td>{{alquiler.tiempoAlquiler}}</td>
+          <td>{{alquiler.fechaAlquiler}</td>   
+          <td>{{alquiler.fechaDevolucion}}</td>
+          <td>{{alquiler.fechaDevolucionReal}</td>
+          <td>{{alquiler.pago}}</td>
+        </tr>
+      </tbody>
+    </table>

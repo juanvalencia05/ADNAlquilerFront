@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import TrmApi, { TrmApiQuote } from 'trm-api';
 
 
 @Component({
@@ -8,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrmComponent implements OnInit {
 
+  readonly trmApi = new TrmApi();
+  public listaTrm: TrmApiQuote[];
   constructor() { }
 
 
   ngOnInit(): void {
+    this.consultarTrm();
+  }
 
+  consultarTrm(){
+    this.trmApi
+    .history({ limit: 30, order: "DESC" })
+    .then((data) => this.listaTrm=data);
   }
 
  

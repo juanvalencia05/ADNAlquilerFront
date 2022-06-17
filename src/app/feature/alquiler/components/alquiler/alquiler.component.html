@@ -1,1 +1,22 @@
-<p>alquiler works!</p>
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-sm-auto  bg-light sticky-top">
+            <div class="d-flex flex-sm-column">
+                <a  routerLink="./crear" class="p-3 link-dark text-decoration-none"  data-bs-placement="right" id="crearAlquiler" >
+                    Crear
+                </a>
+                <a  routerLink="./listar" class="p-3 link-dark text-decoration-none" data-bs-placement="right" id="listarAlquiler">
+                    Listar
+                </a>
+                <a  routerLink="./eliminar" class="p-3 link-dark text-decoration-none"  data-bs-placement="right" id="eliminarAlquiler" >
+                    Eliminar 
+                </a>
+            </div>
+
+        </div>
+        <div class="col-sm  vw-100">
+            <div class="mb-5 mt-3 ms-3" >Aqui podras ver la accion de que deseas realizar </div>
+            <router-outlet></router-outlet>
+          </div>
+    </div>
+</div> 

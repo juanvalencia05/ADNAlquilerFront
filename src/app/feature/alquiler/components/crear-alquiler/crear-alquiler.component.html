@@ -1,1 +1,39 @@
-<p>crear-alquiler works!</p>
+<div class="container-fluid">
+    <h1 class="text">Alquiler de vehiculos</h1>
+    <br>
+    <form [formGroup]="alquilerForm" (ngSubmit)="crear()">
+    <div class="row">
+      <div class="col-sm-2">
+        <label>Tiempo del alquiler:</label>
+      </div>
+      <div class="col-sm-6">
+        <input validar type="number" id="matricula" name="tiempoAlquiler"  class="form-control" placeholder="Tiempo del Alquiler"
+          formControlName="iempoAlquiler">
+      </div>
+    </div>
+  
+    <div class="row mt-2">
+      <div class="col-sm-2 ">
+        <label>Fecha alquilado del vehiculo:</label>
+      </div>
+      <div class="col-sm-6 ">
+        <input validar type="text" id="fechaAlquiler" name="marca"  class="form-control" placeholder="dd/MM/yyyy"
+          formControlName="fechaAlquiler">
+      </div>
+    </div>
+  
+    <div class="row mt-2">
+      <div class="col-sm-2">
+        <label>Fecha devolucion del vehiculo:</label>
+      </div>
+      <div class="col-sm-6">
+        <input validar type="text" id="fechaDevolucion" name="modelo"  class="form-control" placeholder="dd/MM/yyyy"
+          formControlName="fechaDevolucion">
+      </div>
+    </div>
+    <button id="crear" class="btn btn-primary btn-block mt-4">
+      Generar alquiler
+    </button>
+  </form>
+    
+  </div>

@@ -26,6 +26,7 @@
     "generator-eslint": "^3.0.1",
     "ngx-cookie-service": "~13.2.1",
     "rxjs": "~7.5.5",
+    "trm-api": "^1.4.14",
     "tslib": "^2.4.0",
     "zone.js": "~0.11.5"
   },
