@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import{AlquilerService} from '../../shared/service/alquiler.service';
 
+
+
 @Component({
   selector: 'app-crear-alquiler',
   templateUrl: './crear-alquiler.component.html',
@@ -9,23 +11,24 @@ import{AlquilerService} from '../../shared/service/alquiler.service';
 })
 export class CrearAlquilerComponent implements OnInit {
   alquilerForm:FormGroup;
+
   constructor(private alquilerService:AlquilerService) { }
 
   ngOnInit(): void {
-    this.construirFormularioProducto();
+    this.construirFormularioAlquiler();
   }
 
   crear(): void
   {
         this.alquilerService.crearAlquiler(this.alquilerForm.value).subscribe(()=>{
-        window.alert('Alquiler Generado')
-        this.alquilerForm.reset;
+          //FALTA LA ALERTA
+        this.alquilerForm.reset();
       })  
   }
 
-  private construirFormularioProducto() {
+  private construirFormularioAlquiler() {
     this.alquilerForm = new FormGroup({
-      tiempoAlquiler: new FormControl('', [Validators.required]),
+      tiempoAlquilado: new FormControl('', [Validators.required]),
       fechaAlquiler:new FormControl('',[Validators.required]),
       fechaDevolucion:new FormControl('',[Validators.required])
     });

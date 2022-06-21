@@ -1,7 +1,10 @@
-<table class="table">
-
+<h1 class="text">Lista del registro de alquiler</h1>
+<br>
+<div class = "div-table">
+    <table class="table">
       <thead>
         <tr>
+          <th scope="col">Id</th>
           <th scope="col">Tiempo de alquiler</th>
           <th scope="col">Fecha de Alquiler</th>
           <th scope="col">Fecha de Devolucion</th>
@@ -11,11 +14,15 @@
       </thead>
       <tbody>
         <tr *ngFor="let alquiler of listaAlquiler | async" id="listaAlquiler">
-          <td>{{alquiler.tiempoAlquiler}}</td>
-          <td>{{alquiler.fechaAlquiler}</td>   
+             
+          <td>{{alquiler.id}}</td>
+          <td>{{alquiler.tiempoAlquilado}}</td>
+          <td>{{alquiler.fechaAlquiler}}</td>   
           <td>{{alquiler.fechaDevolucion}}</td>
-          <td>{{alquiler.fechaDevolucionReal}</td>
-          <td>{{alquiler.pago}}</td>
+          <td>{{alquiler.fechaDevolucionReal}}</td>
+          <td>{{'$' + alquiler.totalAPagar}}</td>
+          
         </tr>
       </tbody>
     </table>
+  </div>

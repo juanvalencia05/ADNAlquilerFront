@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  endpoint: 'http://localhost:8080/Alquiler'
+  endpoint: '<router-outlet></router-outlet>'
 };
 
 /*

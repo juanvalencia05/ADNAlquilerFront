@@ -19,6 +19,6 @@ export class AlquilerService {
   }
 
   public eliminarAlquiler(id: number): Observable<Alquiler> {
-    return this.httpService.doDelete(`${environment.endpoint}/Alquiler/${id}`);
+    return this.httpService.doDelete(`${environment.endpoint}/alquiler/${id}`);
   }
 }

@@ -1,2 +1,20 @@
-<p>eliminar-alquiler</p>
+<div class="container-fluid"> 
+    <h1 class="text">Eliminar registro de alquiler</h1>
+    <br>
+    <form [formGroup]="alquilerForm" (ngSubmit)="eliminar()">
+    <div class="row">
+      <div class="col-sm-1">
+        <label>ID del alquiler:</label>
+      </div>
+      <div class="col-sm-6">
+        <input validar type="number" id="" name="ID"  class="form-control" placeholder="Id"
+          formControlName="id">
+      </div>
+    </div> 
+    <button id="Eliminar" class="btn btn-primary btn-block mt-4">
+      Eliminar generacion del alquler
+    </button>
+  </form>
+    
+</div>
 
