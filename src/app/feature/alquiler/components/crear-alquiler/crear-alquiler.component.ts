@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import{AlquilerService} from '../../shared/service/alquiler.service';
+import Swal from 'sweetalert2';
 
 
 
@@ -20,10 +21,31 @@ export class CrearAlquilerComponent implements OnInit {
 
   crear(): void
   {
+      if(this.alquilerForm.valid)
+      {
         this.alquilerService.crearAlquiler(this.alquilerForm.value).subscribe(()=>{
-          //FALTA LA ALERTA
-        this.alquilerForm.reset();
-      })  
+          this.alquilerForm.reset();
+      
+          Swal.fire({
+            icon:'success',
+            title:'Se creo el alquiler de forma exitosa',
+            timer: 1000,
+            showCancelButton: false,
+            showConfirmButton: false
+          })
+  
+        })  
+      }
+      else{
+        Swal.fire({
+          icon:'error',
+          title:'No has diligenciado todos los campos',
+          timer: 2000,
+          showCancelButton: false,
+          showConfirmButton: false
+        })
+      }
+
   }
 
   private construirFormularioAlquiler() {

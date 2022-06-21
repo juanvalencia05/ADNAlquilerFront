@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, canActivate: [SecurityGuard]  },
   { path: 'alquiler', loadChildren: () => import('./feature/alquiler/alquiler.modulo').then(mod => mod.AlquilerModule) },
-  { path: 'alquiler', loadChildren: () => import('./feature/alquiler/alquiler.modulo').then(mod => mod.AlquilerModule) },
   { path: '**', redirectTo: '/home' }
 ];
 

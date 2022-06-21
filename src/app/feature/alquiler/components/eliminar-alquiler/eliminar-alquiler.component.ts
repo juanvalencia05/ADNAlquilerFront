@@ -25,9 +25,7 @@ export class EliminarAlquilerComponent implements OnInit {
 
   private construirFormularioEliminarAlquiler() {
     this.alquilerForm = new FormGroup({
-      tiempoAlquilado: new FormControl('', [Validators.required]),
-      fechaAlquiler:new FormControl('',[Validators.required]),
-      fechaDevolucion:new FormControl('',[Validators.required])
+      id: new FormControl('', [Validators.required])
     });
   }
 
