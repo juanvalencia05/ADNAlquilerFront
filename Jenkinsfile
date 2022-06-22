@@ -60,7 +60,6 @@ pipeline {
       steps{
         echo "------------>Testing Protractor<------------"
 	      sh 'npm run e2e'
-        chrome_options.add_argument('--headless')
       }
     }
 
