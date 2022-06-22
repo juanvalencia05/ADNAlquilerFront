@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlquilerService } from '../../shared/service/alquiler.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-eliminar-alquiler',
@@ -20,10 +21,16 @@ export class EliminarAlquilerComponent implements OnInit {
   eliminar(): void
   {
         this.id = this.alquilerForm.get('id')?.value;       
-        this.alquilerService.eliminarAlquiler(this.id).subscribe(()=>{
-          window.alert("se elimino")
-          //FALTA LA ALERTA
+        this.alquilerService.eliminarAlquiler(this.id).subscribe(()=>{ 
         this.alquilerForm.reset();
+
+        Swal.fire({
+          icon:'success',
+          title:'Se Elimino el alquiler de forma exitosa',
+          timer: 1000,
+          showCancelButton: false,
+          showConfirmButton: false
+        })
       })  
   }
 
