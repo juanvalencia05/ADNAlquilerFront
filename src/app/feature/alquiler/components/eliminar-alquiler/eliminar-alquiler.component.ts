@@ -34,7 +34,7 @@ export class EliminarAlquilerComponent implements OnInit {
               showCancelButton: false,
               showConfirmButton: false
             });
-          })
+          });
         }
         else{
           Swal.fire({
