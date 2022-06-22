@@ -15,6 +15,8 @@ exports.config = {
   ],
   capabilities: {
     'browserName': 'chrome',
+    acceptInsecureCerts: true,
+    acceptSslCerts: true,
     "chromeOptions": {
       'args': [
       "--headless",
