@@ -2,7 +2,7 @@
 export interface Alquiler
 {
     tiempoAlquilado:number;
-    fechaAlquiler:String;
-    fechaDevolucion:String;
+    fechaAlquiler:string;
+    fechaDevolucion:string;
 }
 

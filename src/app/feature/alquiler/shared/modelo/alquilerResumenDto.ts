@@ -1,8 +1,8 @@
 export interface AlquilerResumen
 {
     tiempoAlquilado:number;
-    fechaAlquiler:String;
-    fechaDevolucion:String;
-    fechaDevolucionReal:String;
+    fechaAlquiler:string;
+    fechaDevolucion:string;
+    fechaDevolucionReal:string;
     totalApagar:number;
 }
