@@ -23,8 +23,5 @@ import { EliminarAlquilerComponent } from './components/eliminar-alquiler/elimin
     ],
     providers:[AlquilerService]
   })
-  export class AlquilerModule 
-  { 
-    
-  }
+  export class AlquilerModule {} 
   
