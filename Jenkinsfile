@@ -37,7 +37,7 @@ pipeline {
 
    stage('clean') {
       steps{
-	sh 'npm cache clean --force'
+	    sh 'npm cache clean --force'
           
       }
     }
@@ -59,7 +59,8 @@ pipeline {
     stage('Test end-to-end') {
       steps{
         echo "------------>Testing Protractor<------------"
-	      sh 'npm run e2e --browsers=ChromeHeadless --watch=false --code-coverage'
+	      sh 'npm run e2e'
+        chrome_options.add_argument('--headless')
       }
     }
 
