@@ -59,7 +59,7 @@ pipeline {
     stage('Test end-to-end') {
       steps{
         echo "------------>Testing Protractor<------------"
-	      sh 'npm e2e'
+	      //sh 'npm run e2e'
       }
     }
 
