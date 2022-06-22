@@ -4,7 +4,6 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Id</th>
           <th scope="col">Tiempo de alquiler</th>
           <th scope="col">Fecha de Alquiler</th>
           <th scope="col">Fecha de Devolucion</th>
@@ -15,7 +14,6 @@
       <tbody>
         <tr *ngFor="let alquiler of listaAlquiler | async" id="listaAlquiler">
              
-          <td>{{alquiler.id}}</td>
           <td>{{alquiler.tiempoAlquilado}}</td>
           <td>{{alquiler.fechaAlquiler}}</td>   
           <td>{{alquiler.fechaDevolucion}}</td>

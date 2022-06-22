@@ -9,6 +9,8 @@ import { AlquilerService } from '../../shared/service/alquiler.service';
 })
 export class EliminarAlquilerComponent implements OnInit {
   alquilerForm:FormGroup;
+  id :number;
+
   constructor(private alquilerService:AlquilerService) { }
 
   ngOnInit(): void {
@@ -17,7 +19,9 @@ export class EliminarAlquilerComponent implements OnInit {
 
   eliminar(): void
   {
-        this.alquilerService.eliminarAlquiler(this.alquilerForm.value).subscribe(()=>{
+        this.id = this.alquilerForm.get('id')?.value;       
+        this.alquilerService.eliminarAlquiler(this.id).subscribe(()=>{
+          window.alert("se elimino")
           //FALTA LA ALERTA
         this.alquilerForm.reset();
       })  

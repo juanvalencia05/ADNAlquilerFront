@@ -1,6 +1,5 @@
 export interface AlquilerResumen
 {
-    id:number;
     tiempoAlquilado:number;
     fechaAlquiler:String;
     fechaDevolucion:String;
