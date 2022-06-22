@@ -15,22 +15,9 @@ exports.config = {
   ],
   capabilities: {
     'browserName': 'chrome',
-    acceptInsecureCerts: true,
-    acceptSslCerts: true,
-    chromeOptions: {
-      'args': [
-        '--headless',
-        '--disable-gpu',
-        '--test-type=browser',
-        '--disable-extensions',
-        '--no-sandbox',
-        '--disable-infobars',
-        '--window-size=1920,1080',
-        //'--start-maximized'
-         "--disable-gpu",
-      ]
+    "chromeOptions": {
+      'args': ["--headless"]
     }
-
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
