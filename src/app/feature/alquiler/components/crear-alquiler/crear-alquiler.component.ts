@@ -32,9 +32,8 @@ export class CrearAlquilerComponent implements OnInit {
             timer: 1000,
             showCancelButton: false,
             showConfirmButton: false
-          })
-  
-        })  
+          });
+        });  
       }
       else{
         Swal.fire({
@@ -43,7 +42,7 @@ export class CrearAlquilerComponent implements OnInit {
           timer: 2000,
           showCancelButton: false,
           showConfirmButton: false
-        })
+        });
       }
 
   }

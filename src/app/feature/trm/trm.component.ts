@@ -20,7 +20,7 @@ export class TrmComponent implements OnInit {
 
   consultarTrm(){
     this.trmApi
-    .history({ limit: 10, order: "DESC" })
+    .history({ limit: 10, order: 'DESC' })
     .then((data) => this.listaTrm=data);
   }
 

@@ -5,5 +5,4 @@ export interface AlquilerResumen
     fechaDevolucion:string;
     fechaDevolucionReal:string;
     totalApagar:number;
-    
 }
