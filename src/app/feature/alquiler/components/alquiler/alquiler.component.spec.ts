@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AlquilerComponent } from './alquiler.component';
 
-describe('AsistenciaComponent', () => {
+describe('AlquilerComponent', () => {
   let component: AlquilerComponent;
   let fixture: ComponentFixture<AlquilerComponent>;
 

@@ -17,17 +17,17 @@ exports.config = {
     'browserName': 'chrome',
     acceptInsecureCerts: true,
     acceptSslCerts: true,
-    "chromeOptions": {
+    chromeOptions: {
       'args': [
-      "--headless",
-      '--disable-gpu',
-      '--test-type=browser',
-      '--disable-extensions',
-      '--no-sandbox',
-      '--disable-infobars',
-      '--window-size=1920,1080',
-      "--disable-gpu",
-    ]
+        '--headless',
+        '--disable-gpu',
+        '--test-type=browser',
+        '--disable-extensions',
+        '--no-sandbox',
+        '--disable-infobars',
+        '--window-size=1920,1080',
+         "--disable-gpu",
+      ]
     }
   },
   directConnect: true,
@@ -43,7 +43,9 @@ exports.config = {
       project: require('path').join(__dirname, './tsconfig.json')
     });
 
+    // @ts-ignore
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    // @ts-ignore
     jasmine.getEnv().addReporter(new HtmlReporter({
       baseDirectory: 'tmp/screenshots'
    }).getJasmine2Reporter());

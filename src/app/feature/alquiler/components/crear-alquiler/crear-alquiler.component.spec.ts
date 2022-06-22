@@ -11,7 +11,7 @@ import { CrearAlquilerComponent } from './crear-alquiler.component';
 
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('CrearAsistenciaComponent', () => {
+describe('CrearAlquilerComponent', () => {
   let component: CrearAlquilerComponent;
   let alquilerService: AlquilerService;
   let fixture: ComponentFixture<CrearAlquilerComponent>;

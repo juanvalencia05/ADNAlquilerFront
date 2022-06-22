@@ -20,18 +20,32 @@ export class EliminarAlquilerComponent implements OnInit {
 
   eliminar(): void
   {
-        this.id = this.alquilerForm.get('id')?.value;       
-        this.alquilerService.eliminarAlquiler(this.id).subscribe(()=>{ 
-        this.alquilerForm.reset();
+        this.id = this.alquilerForm.get('id')?.value;  
+        
+        if(this.alquilerForm.valid)
+        {
+          this.alquilerService.eliminarAlquiler(this.id).subscribe(()=>{ 
+            this.alquilerForm.reset();
+    
+            Swal.fire({
+              icon:'success',
+              title:'Se Elimino el alquiler de forma exitosa',
+              timer: 1000,
+              showCancelButton: false,
+              showConfirmButton: false
+            })
+          })  
+        }
+        else{
+          Swal.fire({
+            icon:'error',
+            title:'No se agrego el id',
+            timer: 2000,
+            showCancelButton: false,
+            showConfirmButton: false
+          })
+        }
 
-        Swal.fire({
-          icon:'success',
-          title:'Se Elimino el alquiler de forma exitosa',
-          timer: 1000,
-          showCancelButton: false,
-          showConfirmButton: false
-        })
-      })  
   }
 
   private construirFormularioEliminarAlquiler() {
