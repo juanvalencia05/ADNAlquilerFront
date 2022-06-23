@@ -5,9 +5,6 @@ import Swal from 'sweetalert2';
 import { Alquiler } from '../../shared/modelo/alquiler';
 import { AlquilerService } from '../../shared/service/alquiler.service';
 
-
-
-
 @Component({
   selector: 'app-crear-alquiler',
   templateUrl: './crear-alquiler.component.html',
@@ -16,7 +13,6 @@ import { AlquilerService } from '../../shared/service/alquiler.service';
 export class CrearAlquilerComponent implements OnInit {
   alquilerForm:FormGroup;
   alquiler = new Alquiler();
- 
   constructor(private alquilerService:AlquilerService,private datePipe:DatePipe) { }
 
   ngOnInit(): void {
@@ -26,18 +22,15 @@ export class CrearAlquilerComponent implements OnInit {
 
   crear(): void
   {
-
     const fechaAlquiler = this.alquilerForm.get('fechaAlquiler')?.value;
     const fechaAlquilerDate = fechaAlquiler as Date;
-    const formateada = this.datePipe.transform(fechaAlquilerDate, 'dd/MM/yyyy');
 
     const fechaDevolucion = this.alquilerForm.get('fechaDevolucion')?.value;
     const fechaDevolucionDate = fechaDevolucion as Date;
-    const formateada1 = this.datePipe.transform(fechaDevolucionDate, 'dd/MM/yyyy');
 
     this.alquiler.tiempoAlquilado = this.alquilerForm.get('tiempoAlquilado')?.value;
-    this.alquiler.fechaAlquiler = formateada as string;
-    this.alquiler.fechaDevolucion = formateada1 as string;
+    this.alquiler.fechaAlquiler = this.datePipe.transform(fechaAlquilerDate, 'dd/MM/yyyy'); ;
+    this.alquiler.fechaDevolucion = this.datePipe.transform(fechaDevolucionDate, 'dd/MM/yyyy') ;
 
       if(this.alquilerForm.valid)
       {
