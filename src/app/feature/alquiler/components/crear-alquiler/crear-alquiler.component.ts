@@ -29,7 +29,7 @@ export class CrearAlquilerComponent implements OnInit {
     const fechaDevolucionDate = fechaDevolucion as Date;
 
     this.alquiler.tiempoAlquilado = this.alquilerForm.get('tiempoAlquilado')?.value;
-    this.alquiler.fechaAlquiler = this.datePipe.transform(fechaAlquilerDate, 'dd/MM/yyyy'); ;
+    this.alquiler.fechaAlquiler = this.datePipe.transform(fechaAlquilerDate, 'dd/MM/yyyy');
     this.alquiler.fechaDevolucion = this.datePipe.transform(fechaDevolucionDate, 'dd/MM/yyyy') ;
 
       if(this.alquilerForm.valid)
