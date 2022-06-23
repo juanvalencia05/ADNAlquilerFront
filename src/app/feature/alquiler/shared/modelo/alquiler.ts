@@ -1,5 +1,5 @@
 
-export interface Alquiler
+export class Alquiler
 {
     tiempoAlquilado:number;
     fechaAlquiler:string;

@@ -42,10 +42,10 @@ describe('CrearAlquilerComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('formulario es invalido cuando no esta completo', () => {
+  it('formulario es invalido, no esta completo', () => {
     component.alquilerForm.controls.tiempoAlquilado.setValue('4');
     component.alquilerForm.controls.fechaAlquiler.setValue('')
-    component.alquilerForm.controls.fechaDevolucion.setValue('25/06/2022')
+    component.alquilerForm.controls.fechaDevolucion.setValue('2022/06/25')
     expect(component.alquilerForm.valid).toBeFalsy();
 
     component.crear();
@@ -58,9 +58,8 @@ describe('CrearAlquilerComponent', () => {
   it('Registrar alquiler con exito', () => {
     TestBed.resetTestingModule();
     component.alquilerForm.controls.tiempoAlquilado.setValue('4');
-    component.alquilerForm.controls.fechaAlquiler.setValue('21/06/2022')
-    component.alquilerForm.controls.fechaDevolucion.setValue('25/06/2022')
-
+    component.alquilerForm.controls.fechaAlquiler.setValue('2022/06/21')
+    component.alquilerForm.controls.fechaDevolucion.setValue('2022/06/25')
 
     spyOn(alquilerService, 'crearAlquiler').and.returnValue(
       of(1)

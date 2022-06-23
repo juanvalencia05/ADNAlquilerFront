@@ -15,7 +15,7 @@
       <tbody>
         <tr *ngFor="let alquiler of listaAlquiler | async" id="listaAlquiler">
              
-          <td>{{alquiler.tiempoAlquilado}}</td>
+          <td>{{alquiler.tiempoAlquilado + ' dias'}}</td>
           <td>{{alquiler.fechaAlquiler}}</td>   
           <td>{{alquiler.fechaDevolucion}}</td>
           <td>{{alquiler.fechaDevolucionReal}}</td>

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListarAlquilerComponent } from './components/listar-alquiler/listar-alquiler.component';
@@ -21,7 +21,7 @@ import { EliminarAlquilerComponent } from './components/eliminar-alquiler/elimin
       AlquilerRoutingModule,
       ReactiveFormsModule
     ],
-    providers:[AlquilerService]
+    providers:[AlquilerService, DatePipe]
   })
   export class AlquilerModule {} 
   
