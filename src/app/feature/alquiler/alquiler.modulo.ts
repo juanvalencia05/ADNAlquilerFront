@@ -10,18 +10,17 @@ import { AlquilerRoutingModule } from './alquiler-routing.module';
 import { EliminarAlquilerComponent } from './components/eliminar-alquiler/eliminar-alquiler.component';
 
 @NgModule({
-    declarations: [   
-         ListarAlquilerComponent,
-         CrearAlquilerComponent,
-         EliminarAlquilerComponent,
-         AlquilerComponent
-    ],
-    imports: [
-      CommonModule,
-      AlquilerRoutingModule,
-      ReactiveFormsModule
-    ],
-    providers:[AlquilerService, DatePipe]
-  })
-  export class AlquilerModule {} 
-  
+  declarations: [
+    ListarAlquilerComponent,
+    CrearAlquilerComponent,
+    EliminarAlquilerComponent,
+    AlquilerComponent
+  ],
+  imports: [
+    CommonModule,
+    AlquilerRoutingModule,
+    ReactiveFormsModule
+  ],
+  providers: [AlquilerService, DatePipe]
+})
+export class AlquilerModule { }

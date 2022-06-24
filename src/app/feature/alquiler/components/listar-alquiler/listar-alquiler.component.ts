@@ -10,9 +10,9 @@ import { AlquilerService } from '../../shared/service/alquiler.service';
 })
 export class ListarAlquilerComponent implements OnInit {
 
-  public listaAlquiler:Observable<AlquilerResumen[]>;
+  public listaAlquiler: Observable<AlquilerResumen[]>;
 
-  constructor(protected alquilerService:AlquilerService) { }
+  constructor(protected alquilerService: AlquilerService) { }
 
   ngOnInit(): void {
     this.listaAlquiler = this.alquilerService.consultar();

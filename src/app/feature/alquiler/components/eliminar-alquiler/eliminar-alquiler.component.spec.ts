@@ -14,9 +14,9 @@ describe('EliminarAsistenciaComponent', () => {
   let alquilerService: AlquilerService;
   let fixture: ComponentFixture<EliminarAlquilerComponent>;
 
-  beforeEach(waitForAsync( () => {
-      TestBed.configureTestingModule({
-      declarations: [ EliminarAlquilerComponent ],
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [EliminarAlquilerComponent],
       imports: [
         CommonModule,
         HttpClientTestingModule,
@@ -24,15 +24,15 @@ describe('EliminarAsistenciaComponent', () => {
         ReactiveFormsModule,
         FormsModule
       ],
-      providers:[AlquilerService,DatePipe,HttpService],
+      providers: [AlquilerService, DatePipe, HttpService],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(EliminarAlquilerComponent);
     component = fixture.componentInstance;
-    alquilerService= TestBed.inject(AlquilerService);
+    alquilerService = TestBed.inject(AlquilerService);
     fixture.detectChanges();
   });
 
@@ -40,7 +40,7 @@ describe('EliminarAsistenciaComponent', () => {
     expect(component).toBeTruthy();
   });
 
- it('Eliminar alquiler', () => {
+  it('Eliminar alquiler', () => {
     component.alquilerForm.controls.id.setValue('');
 
     component.eliminar();

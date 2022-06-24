@@ -8,9 +8,9 @@ describe('TrmComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TrmComponent ]
+      declarations: [TrmComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

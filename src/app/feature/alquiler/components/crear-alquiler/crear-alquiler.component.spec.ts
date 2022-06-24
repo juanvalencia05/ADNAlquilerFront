@@ -16,9 +16,9 @@ describe('CrearAlquilerComponent', () => {
   let alquilerService: AlquilerService;
   let fixture: ComponentFixture<CrearAlquilerComponent>;
 
-  beforeEach(waitForAsync( () => {
-      TestBed.configureTestingModule({
-      declarations: [ CrearAlquilerComponent ],
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [CrearAlquilerComponent],
       imports: [
         CommonModule,
         HttpClientTestingModule,
@@ -26,15 +26,15 @@ describe('CrearAlquilerComponent', () => {
         ReactiveFormsModule,
         FormsModule
       ],
-      providers:[AlquilerService,DatePipe,HttpService],
+      providers: [AlquilerService, DatePipe, HttpService],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CrearAlquilerComponent);
     component = fixture.componentInstance;
-    alquilerService= TestBed.inject(AlquilerService);
+    alquilerService = TestBed.inject(AlquilerService);
     fixture.detectChanges();
   });
 
@@ -44,8 +44,8 @@ describe('CrearAlquilerComponent', () => {
 
   it('formulario es invalido, no esta completo', () => {
     component.alquilerForm.controls.tiempoAlquilado.setValue('4');
-    component.alquilerForm.controls.fechaAlquiler.setValue('')
-    component.alquilerForm.controls.fechaDevolucion.setValue('2022/06/25')
+    component.alquilerForm.controls.fechaAlquiler.setValue('');
+    component.alquilerForm.controls.fechaDevolucion.setValue('2022/06/25');
     expect(component.alquilerForm.valid).toBeFalsy();
 
     component.crear();
@@ -58,12 +58,11 @@ describe('CrearAlquilerComponent', () => {
   it('Registrar alquiler con exito', () => {
     TestBed.resetTestingModule();
     component.alquilerForm.controls.tiempoAlquilado.setValue('4');
-    component.alquilerForm.controls.fechaAlquiler.setValue('2022/06/21')
-    component.alquilerForm.controls.fechaDevolucion.setValue('2022/06/25')
+    component.alquilerForm.controls.fechaAlquiler.setValue('2022/06/21');
+    component.alquilerForm.controls.fechaDevolucion.setValue('2022/06/25');
 
     spyOn(alquilerService, 'crearAlquiler').and.returnValue(
-      of(1)
-    );
+      of(1));
 
     component.crear();
 

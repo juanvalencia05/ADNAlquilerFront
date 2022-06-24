@@ -18,11 +18,11 @@ export class TrmComponent implements OnInit {
     this.consultarTrm();
   }
 
-  consultarTrm(){
+  consultarTrm() {
     this.trmApi
-    .history({ limit: 10, order: 'DESC' })
-    .then((data) => this.listaTrm=data);
+      .history({ limit: 10, order: 'DESC' })
+      .then((data) => this.listaTrm = data);
   }
 
- 
+
 }

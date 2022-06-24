@@ -6,27 +6,26 @@ import { EliminarAlquilerComponent } from './components/eliminar-alquiler/elimin
 import { ListarAlquilerComponent } from './components/listar-alquiler/listar-alquiler.component';
 
 const routes: Routes = [{
-    path: '',
-    component: AlquilerComponent,
-    children: [
-      {
-        path: 'crear',
-        component: CrearAlquilerComponent
-      },
-      {
-        path: 'listar',
-        component: ListarAlquilerComponent
-      },
-      {
-        path: 'eliminar',
-        component: EliminarAlquilerComponent
-      }
-    ]
-  }];
-  
-  @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
-  })
-  export class AlquilerRoutingModule{}
-  
+  path: '',
+  component: AlquilerComponent,
+  children: [
+    {
+      path: 'crear',
+      component: CrearAlquilerComponent
+    },
+    {
+      path: 'listar',
+      component: ListarAlquilerComponent
+    },
+    {
+      path: 'eliminar',
+      component: EliminarAlquilerComponent
+    }
+  ]
+}];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class AlquilerRoutingModule { }

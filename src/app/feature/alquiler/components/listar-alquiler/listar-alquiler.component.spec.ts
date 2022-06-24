@@ -5,32 +5,32 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpService } from '@core/services/http.service';
 import { AlquilerService } from '../../shared/service/alquiler.service';
 
- import { ListarAlquilerComponent } from './listar-alquiler.component';
+import { ListarAlquilerComponent } from './listar-alquiler.component';
 
- describe('ListarVehiculoComponent', () => {
-   let component: ListarAlquilerComponent;
-   let fixture: ComponentFixture<ListarAlquilerComponent>;
+describe('ListarVehiculoComponent', () => {
+  let component: ListarAlquilerComponent;
+  let fixture: ComponentFixture<ListarAlquilerComponent>;
 
-   beforeEach(async () => {
-     await TestBed.configureTestingModule({
-       declarations: [ ListarAlquilerComponent ],
-       imports: [
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ListarAlquilerComponent],
+      imports: [
         CommonModule,
         HttpClientTestingModule,
         RouterTestingModule
       ],
       providers: [AlquilerService, HttpService]
-     })
-     .compileComponents();
-   });
+    })
+      .compileComponents();
+  });
 
-   beforeEach(() => {
-     fixture = TestBed.createComponent(ListarAlquilerComponent);
-     component = fixture.componentInstance;
-     fixture.detectChanges();
-   });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ListarAlquilerComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-   it('should create', () => {
-     expect(component).toBeTruthy();
-   });
- });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

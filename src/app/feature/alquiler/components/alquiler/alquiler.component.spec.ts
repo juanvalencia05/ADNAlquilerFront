@@ -9,12 +9,12 @@ describe('AlquilerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AlquilerComponent ],
+      declarations: [AlquilerComponent],
       imports: [
         CommonModule
       ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

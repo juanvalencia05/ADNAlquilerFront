@@ -1,4 +1,4 @@
-import { browser} from "protractor";
+import { browser } from "protractor";
 import { AlquilerPage } from "../page/alquiler/alquiler.po";
 import { CrearAlquilerPage } from "../page/alquiler/crear-alquiler.po";
 import { NavbarPage } from "../page/navbar/navbar.po";
@@ -21,15 +21,15 @@ describe('workspace-project alquiler', () => {
         const FECHA_ALQUILER = "21/06/2022";
         const FECHA_DEVOLUCION= "25/06/2022";
 
-        browser.driver.manage().window().maximize();
-
         crearAlquilerPage.ingresarTiempoAlquilado(TIEMPO_ALQUILADO);
         crearAlquilerPage.ingresarFechaAlquiler(FECHA_ALQUILER);
         crearAlquilerPage.ingresarFechaDevolucion(FECHA_DEVOLUCION);
+        
+        browser.driver.manage().window().maximize();
      
         crearAlquilerPage.crear();
- 
-        //expect(crearAlquilerPage.getSwalFireTitle()).toEqual('Se creo el alquiler de forma exitosa');
+    
+        expect(crearAlquilerPage.getSwalFireTitle()).toEqual('Se creo el alquiler de forma exitosa');
         
     });
 
