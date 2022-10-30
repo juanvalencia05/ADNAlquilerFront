@@ -43,6 +43,7 @@ describe('CrearAlquilerComponent', () => {
   });
 
   it('formulario es invalido, no esta completo', () => {
+
     component.alquilerForm.controls.tiempoAlquilado.setValue('4');
     component.alquilerForm.controls.fechaAlquiler.setValue('');
     component.alquilerForm.controls.fechaDevolucion.setValue('2022/06/25');
@@ -52,6 +53,7 @@ describe('CrearAlquilerComponent', () => {
 
     expect(Swal.isVisible()).toBeTruthy();
     expect(Swal.getTitle().textContent).toEqual('No has diligenciado todos los campos');
+    expect(Swal.getIcon().textContent).toBeTruthy();
     Swal.clickConfirm();
   });
 
@@ -68,6 +70,7 @@ describe('CrearAlquilerComponent', () => {
 
     expect(Swal.isVisible()).toBeTruthy();
     expect(Swal.getTitle().textContent).toEqual('Se creo el alquiler de forma exitosa');
+    expect(Swal.getIcon().textContent).toBeTruthy();
     Swal.clickConfirm();
   });
 

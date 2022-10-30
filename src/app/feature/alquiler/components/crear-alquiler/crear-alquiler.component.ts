@@ -23,22 +23,24 @@ export class CrearAlquilerComponent implements OnInit {
   crear(): void {
     const fechaAlquiler = this.alquilerForm.get('fechaAlquiler').value;
     const fechaAlquilerDate = fechaAlquiler as Date;
+    const formateo = 'dd/MM/yyyy';
 
     const fechaDevolucion = this.alquilerForm.get('fechaDevolucion').value;
     const fechaDevolucionDate = fechaDevolucion as Date;
 
     this.alquiler.tiempoAlquilado = this.alquilerForm.get('tiempoAlquilado').value;
-    this.alquiler.fechaAlquiler = this.datePipe.transform(fechaAlquilerDate, 'dd/MM/yyyy');
-    this.alquiler.fechaDevolucion = this.datePipe.transform(fechaDevolucionDate, 'dd/MM/yyyy');
+    this.alquiler.fechaAlquiler = this.datePipe.transform(fechaAlquilerDate, formateo);
+    this.alquiler.fechaDevolucion = this.datePipe.transform(fechaDevolucionDate, formateo);
 
     if (this.alquilerForm.valid) {
-      Swal.fire({
-        icon: 'success',
-        title: 'Se creo el alquiler de forma exitosa',
-        timer: 2000
-      });
+
       this.alquilerService.crearAlquiler(this.alquiler).subscribe(() => {
         this.alquilerForm.reset();
+        Swal.fire({
+          icon: 'success',
+          title: 'Se creo el alquiler de forma exitosa',
+          timer: 2000
+        });
       });
     }
     else {

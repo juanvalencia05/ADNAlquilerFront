@@ -40,14 +40,16 @@ describe('EliminarAsistenciaComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Eliminar alquiler', () => {
+  it('No eliminar, campos faltantes', () => {
     component.alquilerForm.controls.id.setValue('');
 
     component.eliminar();
 
     expect(Swal.isVisible()).toBeTruthy();
     expect(Swal.getTitle().textContent).toEqual('No se agrego el id');
+    expect(Swal.getIcon().textContent).toBeTruthy();
     Swal.clickConfirm();
+
   });
 
   it('Eliminar alquiler', () => {
@@ -63,7 +65,9 @@ describe('EliminarAsistenciaComponent', () => {
 
     expect(Swal.isVisible()).toBeTruthy();
     expect(Swal.getTitle().textContent).toEqual('Se Elimino el alquiler de forma exitosa');
+    expect(Swal.getIcon().textContent).toBeTruthy();
     Swal.clickConfirm();
+
   });
 
   afterAll(() => {
